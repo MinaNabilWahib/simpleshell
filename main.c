@@ -4,6 +4,7 @@
 #include <string.h>
 #include <zconf.h>
 #include <sys/wait.h>
+#include <time.h>
 
 void print_dirc(){
     char dir[1024];
@@ -22,15 +23,42 @@ int split(char cmd[],char*parsed[],char splitter[]){
     }
     return i;
 }
+void handler(){
+    printf (" PID %d caught execution signal.\n", getpid());
 
-void sigcatcher()
+}
+
+int sigcatcher(FILE *fptr)
 {
-    printf ("PID %d caught signal.\n", getpid());
+    time_t timer;
+    char buffer[26];
+    struct tm* tm_info;
+   // fptr = fopen("log.txt","w");
+
+
+    if(fptr == NULL)
+    {
+        printf("Error!");
+        exit(1);
+    }
+
+    time(&timer);
+    tm_info = localtime(&timer);
+
+    strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
+    //puts(buffer);
+
+    fprintf(fptr,"%s PID %d caught execution signal.\n",buffer, getpid());
+    printf ("%s PID %d caught execution signal.\n",buffer, getpid());
+   // fclose(fptr);
+    return 0;
 }
 
 void main () {
+    FILE *fptr;
+    fptr = fopen("log.txt","w");
 
-while (1) {
+    while (1) {
 // variables declaration
     char command[50];
     char delim[] = " ";
@@ -47,13 +75,15 @@ while (1) {
 
     if (!strcmp(stri[0], "exit") || !strcmp(stri[0], "\001")) {
         exit(0);
+        fclose(fptr);
+
     } else if (!strcmp(stri[0], "cd")) {
         if(chdir(stri[1])<0){
             printf("\nnot found directory");
         }
     } else {
 
-        signal(SIGCHLD,sigcatcher);
+        signal(SIGCLD,sigcatcher(fptr));
         pid = fork();
         if (!strcmp(stri[num_words-1],"&")) {
             stri[num_words-1]='\0';
@@ -65,7 +95,8 @@ while (1) {
                 }
 
             } else {
-              //  wait(NULL);
+              //
+
 
             }
 
@@ -77,10 +108,12 @@ while (1) {
                     printf("\nCould not execute command..");
                     exit(0);
                     // wait(NULL);
+
                 }
 
             } else {
                 wait(NULL);
+
 
             }
         }
