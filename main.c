@@ -23,6 +23,11 @@ int split(char cmd[],char*parsed[],char splitter[]){
     return i;
 }
 
+void sigcatcher()
+{
+    printf ("PID %d caught signal.\n", getpid());
+}
+
 void main () {
 
 while (1) {
@@ -48,6 +53,7 @@ while (1) {
         }
     } else {
 
+        signal(SIGCHLD,sigcatcher);
         pid = fork();
         if (!strcmp(stri[num_words-1],"&")) {
             stri[num_words-1]='\0';
