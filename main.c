@@ -24,11 +24,11 @@ int split(char cmd[],char*parsed[],char splitter[]){
     return i;
 }
 void handler(){
-    printf (" PID %d caught execution signal.\n", getpid());
+    printf (" PID child has been terminated.\n");
 
 }
 
-int sigcatcher(FILE *fptr)
+int sigcatcher(FILE *fptr,pid_t pid)
 {
     time_t timer;
     char buffer[26];
@@ -47,16 +47,29 @@ int sigcatcher(FILE *fptr)
 
     strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
     //puts(buffer);
+    if (pid==0) {
+        // fprintf(fptr,"%s PID %d caught execution signal.\n",buffer, getpid());
+        fprintf(fptr, "%s PID %d caught execution signal.\n", buffer, pid);
 
-    fprintf(fptr,"%s PID %d caught execution signal.\n",buffer, getpid());
-    printf ("%s PID %d caught execution signal.\n",buffer, getpid());
-   // fclose(fptr);
+        //printf ("%s PID %d caught execution signal.\n",buffer, getpid());
+        printf("%s PID %d caught execution signal.\n", buffer, pid);
+    }else {
+        // fprintf(fptr,"%s PID %d caught execution signal.\n",buffer, getpid());
+        fprintf(fptr, "%s PID %d caught execution signal.\n", buffer, pid);
+
+        //printf ("%s PID %d caught execution signal.\n",buffer, getpid());
+        printf("%s PID %d caught execution signal.\n", buffer, pid);
+
+
+    }
+
+    // fclose(fptr);
     return 0;
 }
 
 void main () {
     FILE *fptr;
-    fptr = fopen("log.txt","w");
+    fptr = fopen("log.txt","a");
 
     while (1) {
 // variables declaration
@@ -83,8 +96,9 @@ void main () {
         }
     } else {
 
-        signal(SIGCLD,sigcatcher(fptr));
+        //signal(SIGCLD,sigcatcher(fptr));
         pid = fork();
+        signal(SIGCLD,sigcatcher(fptr,pid));
         if (!strcmp(stri[num_words-1],"&")) {
             stri[num_words-1]='\0';
             if (pid == 0) {                    // child is created
