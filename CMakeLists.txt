@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 3.12)
-project(untitled C)
+cmake_minimum_required(VERSION 3.13)
+project(simpleshell C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(untitled main.c)
+add_executable(simpleshell
+        main.c)

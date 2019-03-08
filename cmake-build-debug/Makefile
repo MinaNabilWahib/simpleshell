@@ -48,10 +48,10 @@ RM = /home/minanabil/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/minanabil/CLionProjects/untitled
+CMAKE_SOURCE_DIR = /home/minanabil/CLionProjects/simpleshell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/minanabil/CLionProjects/untitled/cmake-build-debug
+CMAKE_BINARY_DIR = /home/minanabil/CLionProjects/simpleshell/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/minanabil/CLionProjects/untitled/cmake-build-debug/CMakeFiles /home/minanabil/CLionProjects/untitled/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/minanabil/CLionProjects/simpleshell/cmake-build-debug/CMakeFiles /home/minanabil/CLionProjects/simpleshell/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/minanabil/CLionProjects/untitled/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/minanabil/CLionProjects/simpleshell/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named untitled
+# Target rules for targets named simpleshell
 
 # Build rule for target.
-untitled: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 untitled
-.PHONY : untitled
+simpleshell: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simpleshell
+.PHONY : simpleshell
 
 # fast build rule for target.
-untitled/fast:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-.PHONY : untitled/fast
+simpleshell/fast:
+	$(MAKE) -f CMakeFiles/simpleshell.dir/build.make CMakeFiles/simpleshell.dir/build
+.PHONY : simpleshell/fast
 
 main.o: main.c.o
 
@@ -129,7 +129,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.c.o
+	$(MAKE) -f CMakeFiles/simpleshell.dir/build.make CMakeFiles/simpleshell.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -138,7 +138,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.c.i
+	$(MAKE) -f CMakeFiles/simpleshell.dir/build.make CMakeFiles/simpleshell.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -147,7 +147,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.c.s
+	$(MAKE) -f CMakeFiles/simpleshell.dir/build.make CMakeFiles/simpleshell.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -157,7 +157,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... untitled"
+	@echo "... simpleshell"
 	@echo "... edit_cache"
 	@echo "... main.o"
 	@echo "... main.i"

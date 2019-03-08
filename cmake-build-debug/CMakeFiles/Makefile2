@@ -59,45 +59,45 @@ RM = /home/minanabil/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/minanabil/CLionProjects/untitled
+CMAKE_SOURCE_DIR = /home/minanabil/CLionProjects/simpleshell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/minanabil/CLionProjects/untitled/cmake-build-debug
+CMAKE_BINARY_DIR = /home/minanabil/CLionProjects/simpleshell/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/untitled.dir
+# Target rules for target CMakeFiles/simpleshell.dir
 
 # All Build rule for target.
-CMakeFiles/untitled.dir/all:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/depend
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/minanabil/CLionProjects/untitled/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target untitled"
-.PHONY : CMakeFiles/untitled.dir/all
+CMakeFiles/simpleshell.dir/all:
+	$(MAKE) -f CMakeFiles/simpleshell.dir/build.make CMakeFiles/simpleshell.dir/depend
+	$(MAKE) -f CMakeFiles/simpleshell.dir/build.make CMakeFiles/simpleshell.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/minanabil/CLionProjects/simpleshell/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target simpleshell"
+.PHONY : CMakeFiles/simpleshell.dir/all
 
 # Include target in all.
-all: CMakeFiles/untitled.dir/all
+all: CMakeFiles/simpleshell.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/untitled.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/minanabil/CLionProjects/untitled/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/untitled.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/minanabil/CLionProjects/untitled/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/untitled.dir/rule
+CMakeFiles/simpleshell.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/minanabil/CLionProjects/simpleshell/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simpleshell.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/minanabil/CLionProjects/simpleshell/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/simpleshell.dir/rule
 
 # Convenience name for target.
-untitled: CMakeFiles/untitled.dir/rule
+simpleshell: CMakeFiles/simpleshell.dir/rule
 
-.PHONY : untitled
-
-# clean rule for target.
-CMakeFiles/untitled.dir/clean:
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/clean
-.PHONY : CMakeFiles/untitled.dir/clean
+.PHONY : simpleshell
 
 # clean rule for target.
-clean: CMakeFiles/untitled.dir/clean
+CMakeFiles/simpleshell.dir/clean:
+	$(MAKE) -f CMakeFiles/simpleshell.dir/build.make CMakeFiles/simpleshell.dir/clean
+.PHONY : CMakeFiles/simpleshell.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/simpleshell.dir/clean
 
 .PHONY : clean
 
