@@ -52,13 +52,13 @@ int sigcatcher(FILE *fptr,pid_t pid)
         fprintf(fptr, "%s PID %d caught execution signal.\n", buffer, pid);
 
         //printf ("%s PID %d caught execution signal.\n",buffer, getpid());
-        printf("%s PID %d caught execution signal.\n", buffer, pid);
+       // printf("%s PID %d caught execution signal.\n", buffer, pid);
     }else {
         // fprintf(fptr,"%s PID %d caught execution signal.\n",buffer, getpid());
         fprintf(fptr, "%s PID %d caught execution signal.\n", buffer, pid);
 
         //printf ("%s PID %d caught execution signal.\n",buffer, getpid());
-        printf("%s PID %d caught execution signal.\n", buffer, pid);
+       // printf("%s PID %d caught execution signal.\n", buffer, pid);
 
 
     }
